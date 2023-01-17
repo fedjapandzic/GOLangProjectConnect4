@@ -88,6 +88,24 @@ func ExecCPUTurn(b *game.Board) {
 		}
 	}
 
+	// make two in row.
+	/*
+		for x = 0; x < 7; x++ {
+			x2 := Abs(sx - x)
+			if b.Height[x2] > 9 {
+				continue
+			}
+			y = 9 - b.Height[x2]
+			if checkCPUCell(x2, y, 2, game.CPU, b) {
+				// Avoiding the losing place of the next move.
+				if IsCPULostNextTurn(x2, y, b) {
+					continue
+				}
+				b.Put(x2, game.CPU)
+				return
+			}
+		}*/
+
 	// random next move.
 	for x = 0; x < 7; x++ {
 		rx := rand.Intn(7)
